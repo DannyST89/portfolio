@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // You can use any icons from react-icons
 import DarkModeToggle from './DarkModeToggle';
-
+import { Link } from 'react-scroll';
 const Navbar = () => {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
@@ -11,61 +11,138 @@ const Navbar = () => {
 
     return (
         <nav className="bg-dark-600 py-4">
-            <div className="container mx-auto flex items-center justify-between">
-                <div className="text-white text-2xl font-semibold">
-                    My Website
+            <div className="relative container mx-auto grid grid-cols-5 items-center justify-between ">
+                <div className="text-2xl font-semibold col-span-1">
+                    My Portfolio
                 </div>
 
                 {/* Mobile menu icon */}
-                <div className="md:hidden">
+                <div className="md:hidden absolute top-8 right-0">
                     {isMobileNavOpen ? (
                         <FaTimes
-                            className="text-white text-2xl cursor-pointer"
+                            className=" text-2xl cursor-pointer"
                             onClick={toggleMobileNav}
                         />
                     ) : (
                         <FaBars
-                            className="text-white text-2xl cursor-pointer"
+                            className=" text-2xl cursor-pointer"
                             onClick={toggleMobileNav}
                         />
                     )}
                 </div>
 
                 {/* Desktop navigation */}
-                <div className="hidden md:flex space-x-4">
-                    <a href="#" className="text-white hover:underline">
-                        Home
-                    </a>
-                    <a href="#" className="text-white hover:underline">
-                        About
-                    </a>
-                    <a href="#" className="text-white hover:underline">
-                        Portfolio
-                    </a>
-                    <a href="#" className="text-white hover:underline">
-                        Contact
-                    </a>
-                    <a href="#">
-                        <DarkModeToggle />
-                    </a>
+                <div className="col-span-4 hidden md:flex space-x-4 w-full ">
+                    <div className="grid grid-cols-5  w-full">
+                        <div className="flex justify-between content-center py col-span-3">
+                            <div className="">
+                                <Link
+                                    className="text-dark hover:underline"
+                                    activeClass="active"
+                                    to="hero"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-100}
+                                    duration={500}
+                                >
+                                    Home
+                                </Link>
+                            </div>
+                            <div className="">
+                                <Link
+                                    activeClass="active"
+                                    to="about"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={50}
+                                    duration={500}
+                                    className="text-dark hover:underline"
+                                >
+                                    About
+                                </Link>
+                            </div>
+                            <div className="">
+                                <Link
+                                    activeClass="active"
+                                    to="jobs"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={50}
+                                    duration={500}
+                                    className="text-dark hover:underline"
+                                >
+                                    My Jobs
+                                </Link>
+                            </div>
+                            <div className="">
+                                <Link
+                                    activeClass="active"
+                                    to="contact"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={50}
+                                    duration={500}
+                                    className="text-white hover:underline"
+                                >
+                                    Contact
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className="col-span-2 flex justify-center content-center">
+                            <DarkModeToggle />
+                        </div>
+                    </div>
                 </div>
             </div>
 
             {/* Mobile navigation */}
             {isMobileNavOpen && (
-                <div className="md:hidden bg-blue-500 py-2">
-                    <a href="#" className="block text-white py-2">
+                <div className="md:hidden bg-dark-600 py-2">
+                    <Link
+                        activeClass="active"
+                        to="hero"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="block  py-2"
+                    >
                         Home
-                    </a>
-                    <a href="#" className="block text-white py-2">
+                    </Link>
+                    <Link
+                        activeClass="active"
+                        to="about"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="block  py-2"
+                    >
                         About
-                    </a>
-                    <a href="#" className="block text-white py-2">
-                        Portfolio
-                    </a>
-                    <a href="#" className="block text-white py-2">
+                    </Link>
+                    <Link
+                        activeClass="active"
+                        to="jobs"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="block  py-2"
+                    >
+                        Jobs
+                    </Link>
+                    <Link
+                        activeClass="active"
+                        to="contact"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="block  py-2"
+                    >
                         Contact
-                    </a>
+                    </Link>
                 </div>
             )}
         </nav>

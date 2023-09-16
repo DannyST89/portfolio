@@ -1,29 +1,22 @@
 // components/DarkModeToggle.js
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
+import { useTheme } from 'next-themes';
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
-import { toggleDarkMode } from '@/src/store/slices/darkModeSlice';
 
 const DarkModeToggle = () => {
-    const isDarkMode = useSelector((state) => state.darkMode);
-    const dispatch = useDispatch();
-
-    const handleToggle = () => {
-        dispatch(toggleDarkMode());
-    };
+    const { theme, setTheme } = useTheme();
 
     return (
-        <div className="text-gray-500 dark:text-gray-300">
-            {isDarkMode ? (
+        <div className="text-black-500 dark:text-gray-300 b">
+            {theme === 'dark' ? (
                 <MdOutlineLightMode
-                    onClick={handleToggle}
+                    onClick={() => setTheme('light')}
                     className="cursor-pointer"
                     size={24}
                 />
             ) : (
                 <MdOutlineDarkMode
-                    onClick={handleToggle}
+                    onClick={() => setTheme('dark')}
                     className="cursor-pointer"
                     size={24}
                 />

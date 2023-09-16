@@ -1,12 +1,12 @@
 'use client';
-import { Provider } from 'react-redux';
+
 import MainLayout from './layouts/MainLayout';
-import store from '@/src/store/store';
+import { ThemeProvider } from 'next-themes';
 
 export default function Home() {
     return (
-        <Provider store={store}>
+        <ThemeProvider attribute="class">
             <MainLayout></MainLayout>
-        </Provider>
+        </ThemeProvider>
     );
 }
