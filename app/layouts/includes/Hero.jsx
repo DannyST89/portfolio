@@ -8,9 +8,9 @@ const Hero = () => {
     return (
         <div
             id="hero"
-            className="grid grid-cols-1 h-[800px] mt-5 mx-5 mb-[30px]"
+            className="grid grid-cols-1 h-[500px] mt-20 mx-5 mb-[30px]"
         >
-            <div className="flex justify-center items-center h-full">
+            <div className="flex justify-center items-center h-full mb-10">
                 <div className=" h-[100px]">
                     <Image
                         src={profileImage}
@@ -21,17 +21,23 @@ const Hero = () => {
                     />
                 </div>
             </div>
-            <div className=" sm:mx-[200px] flexjustify-center content-center">
-                <h1 className="text-2xl text-[24px] sm:text-4xl !leading-[1.5] font-medium  mb-10">
-                    <span className="font-semibold">
-                        Hello, I&apos;m Danny.
-                    </span>
-                    I&apos;m a
-                    <span className="font-semibold">
-                        Junior Software Developer
-                    </span>{' '}
-                    with strong skills in JavaScript, React js and Next js.
-                </h1>
+            <div className="sm:mx-[200px] flexjustify-center content-center mt-5">
+                <div>
+                    <h1 className="text-2xl text-[24px] sm:text-4xl !leading-[1.5] font-medium  ">
+                        <span className="font-semibold">
+                            Hello, I&apos;m Danny.
+                        </span>{' '}
+                        I&apos;m a{' '}
+                        <span className="font-semibold">Junior Developer</span>{' '}
+                        with strong skills in JavaScript,
+                        <span className="text-blue-900 italic">
+                            {' '}
+                            React js
+                        </span>{' '}
+                        and
+                        <span className="text-blue-900 italic"> Next js.</span>
+                    </h1>
+                </div>
             </div>
             <div className=" grid grid-cols-1 h-[120px] sm:grid-cols-3">
                 <div className="flex h-[60px] justify-center content-center ">

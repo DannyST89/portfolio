@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // You can use any icons from react-icons
-import DarkModeToggle from './DarkModeToggle';
 import { Link } from 'react-scroll';
 const Navbar = () => {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -12,14 +11,14 @@ const Navbar = () => {
         setIsMobileNavOpen(false);
     };
     return (
-        <nav className="bg-dark-600 py-4 fixed z-10">
+        <nav className="bg-dark-600 pt-4 fixed z-10 top-0 bg-slate-100">
             <div className="relative container mx-auto grid grid-cols-5 items-center justify-between ">
                 <div className="text-2xl font-semibold col-span-1">
                     My Portfolio
                 </div>
 
                 {/* Mobile menu icon */}
-                <div className="md:hidden absolute top-8 right-2">
+                <div className="md:hidden absolute top-8 right-5">
                     {isMobileNavOpen ? (
                         <FaTimes
                             className=" text-2xl cursor-pointer"
@@ -117,9 +116,7 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <div className="col-span-2 flex justify-center content-center">
-                            <DarkModeToggle />
-                        </div>
+                        <div className="col-span-2 flex justify-center content-center"></div>
                     </div>
                 </div>
             </div>
