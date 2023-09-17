@@ -8,16 +8,18 @@ const Navbar = () => {
     const toggleMobileNav = () => {
         setIsMobileNavOpen(!isMobileNavOpen);
     };
-
+    const closeMobileNav = () => {
+        setIsMobileNavOpen(false);
+    };
     return (
-        <nav className="bg-dark-600 py-4">
+        <nav className="bg-dark-600 py-4 fixed z-10">
             <div className="relative container mx-auto grid grid-cols-5 items-center justify-between ">
                 <div className="text-2xl font-semibold col-span-1">
                     My Portfolio
                 </div>
 
                 {/* Mobile menu icon */}
-                <div className="md:hidden absolute top-8 right-0">
+                <div className="md:hidden absolute top-8 right-2">
                     {isMobileNavOpen ? (
                         <FaTimes
                             className=" text-2xl cursor-pointer"
@@ -32,7 +34,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop navigation */}
-                <div className="col-span-4 hidden md:flex space-x-4 w-full ">
+                <div className="col-span-4 hidden md:flex space-x-4 w-full">
                     <div className="grid grid-cols-5  w-full">
                         <div className="flex justify-between content-center py col-span-3">
                             <div className="">
@@ -71,7 +73,33 @@ const Navbar = () => {
                                     duration={500}
                                     className="text-dark hover:underline"
                                 >
-                                    My Jobs
+                                    Proyects
+                                </Link>
+                            </div>
+                            <div className="">
+                                <Link
+                                    activeClass="active"
+                                    to="contact"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={50}
+                                    duration={500}
+                                    className="text-white hover:underline"
+                                >
+                                    Skills
+                                </Link>
+                            </div>
+                            <div className="">
+                                <Link
+                                    activeClass="active"
+                                    to="contact"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={50}
+                                    duration={500}
+                                    className="text-white hover:underline"
+                                >
+                                    Expirience
                                 </Link>
                             </div>
                             <div className="">
@@ -107,6 +135,7 @@ const Navbar = () => {
                         offset={50}
                         duration={500}
                         className="block  py-2"
+                        onClick={closeMobileNav}
                     >
                         Home
                     </Link>
@@ -118,6 +147,7 @@ const Navbar = () => {
                         offset={50}
                         duration={500}
                         className="block  py-2"
+                        onClick={closeMobileNav}
                     >
                         About
                     </Link>
@@ -129,8 +159,9 @@ const Navbar = () => {
                         offset={50}
                         duration={500}
                         className="block  py-2"
+                        onClick={closeMobileNav}
                     >
-                        Jobs
+                        Projects
                     </Link>
                     <Link
                         activeClass="active"
@@ -140,6 +171,31 @@ const Navbar = () => {
                         offset={50}
                         duration={500}
                         className="block  py-2"
+                        onClick={closeMobileNav}
+                    >
+                        Skills
+                    </Link>
+                    <Link
+                        activeClass="active"
+                        to="contact"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="block  py-2"
+                        onClick={closeMobileNav}
+                    >
+                        Expirience
+                    </Link>
+                    <Link
+                        activeClass="active"
+                        to="contact"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="block  py-2"
+                        onClick={closeMobileNav}
                     >
                         Contact
                     </Link>
