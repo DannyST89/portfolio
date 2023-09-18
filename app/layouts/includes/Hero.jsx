@@ -57,7 +57,12 @@ const Hero = () => {
                         <div className="flex">
                             <h2 className="w-[80%]">Download CV</h2>
                             <span className="w-[20%]">
-                                <AiOutlineDownload size={24} />
+                                <a href="/lib/Profile.pdf" download>
+                                    <AiOutlineDownload
+                                        size={24}
+                                        className="opacity-60 group-hover:translate-y-1 transition"
+                                    />
+                                </a>
                             </span>
                         </div>
                     </button>

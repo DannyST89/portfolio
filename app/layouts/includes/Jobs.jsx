@@ -6,7 +6,9 @@ const Jobs = () => {
             </h2>
             <div className="grid grid-cols-1 justify-center content-center h-[300px] border rounded-lg m-3">
                 <div className="p-5">
-                    <h2>Centauro Solutions</h2>
+                    <h2 className="font-semibold ml-5 text-[20px] mt-10">
+                        Centauro Solutions
+                    </h2>
                     <p className="flex justify-center content-center m-5 text-[16px]  text-gray-600 tracking-wide">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. Atque similique ex cum quibusdam non incidunt sed
@@ -49,7 +51,9 @@ const Jobs = () => {
             </div>
             <div className="grid grid-cols-1 justify-center content-center h-[300px] border rounded-lg m-3">
                 <div className="p-5">
-                    <h2>Centauro Solutions</h2>
+                    <h2 className="font-semibold ml-5 text-[20px] mt-10">
+                        Intership CSG Informática
+                    </h2>
                     <p className="flex justify-center content-center m-5 text-[16px]  text-gray-600 tracking-wide">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. Atque similique ex cum quibusdam non incidunt sed

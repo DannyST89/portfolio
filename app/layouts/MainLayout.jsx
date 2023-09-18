@@ -3,6 +3,8 @@ import Hero from './includes/Hero';
 import Jobs from './includes/Jobs';
 import Contact from './includes/Contact';
 import About from './includes/About';
+import Skills from './includes/Skills';
+import Experience from './includes/Experience';
 
 const MainLayout = ({ children }) => {
     return (
@@ -17,6 +19,8 @@ const MainLayout = ({ children }) => {
                 <Hero />
                 <About />
                 <Jobs />
+                <Skills />
+                <Experience />
                 <Contact />
             </div>
         </div>
